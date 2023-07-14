@@ -24,7 +24,11 @@ migrate_working_dir/
 .classpath
 .project
 .settings/
-# .vscode/*
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
 
 # Flutter repo-specific
 /bin/cache/
@@ -130,15 +134,6 @@ coverage/
 # Symbols
 app.*.symbols
 
-# Exceptions to above rules.
-!**/ios/**/default.mode1v3
-!**/ios/**/default.mode2v3
-!**/ios/**/default.pbxuser
-!**/ios/**/default.perspectivev3
-!/packages/flutter_tools/test/data/dart_dependencies_test/**/.packages
-!/dev/ci/**/Gemfile.lock
-!.vscode/settings.json
-
 # Obfuscation related
 app.*.map.json
 
@@ -151,3 +146,11 @@ app.*.map.json
 *.g.dart
 *.freezed.dart
 *.config.dart
+
+# Exceptions to above rules.
+!**/ios/**/default.mode1v3
+!**/ios/**/default.mode2v3
+!**/ios/**/default.pbxuser
+!**/ios/**/default.perspectivev3
+!/packages/flutter_tools/test/data/dart_dependencies_test/**/.packages
+!/dev/ci/**/Gemfile.lock

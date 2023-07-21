@@ -500,6 +500,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 7AFA3C8E1D35360C0083082E /* Release.xcconfig */;
 			buildSettings = {
+				APP_NAME = "My App";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = "$(FLUTTER_BUILD_NUMBER)";
@@ -510,7 +511,6 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				NEW_SETTING = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.flutterStarterBoilerplate;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Runner/Runner-Bridging-Header.h";
@@ -680,6 +680,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 9740EEB21CF90195004384FC /* Debug.xcconfig */;
 			buildSettings = {
+				APP_NAME = "My App";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = "$(FLUTTER_BUILD_NUMBER)";
@@ -690,7 +691,6 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				NEW_SETTING = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.flutterStarterBoilerplate;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Runner/Runner-Bridging-Header.h";
@@ -704,6 +704,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 7AFA3C8E1D35360C0083082E /* Release.xcconfig */;
 			buildSettings = {
+				APP_NAME = "My App";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = "$(FLUTTER_BUILD_NUMBER)";
@@ -714,7 +715,6 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				NEW_SETTING = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.flutterStarterBoilerplate;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Runner/Runner-Bridging-Header.h";
@@ -782,6 +782,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 9740EEB21CF90195004384FC /* Debug.xcconfig */;
 			buildSettings = {
+				APP_NAME = "My App";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = "$(FLUTTER_BUILD_NUMBER)";
@@ -792,9 +793,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				NEW_SETTING = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.flutterStarterBoilerplate.dev;
-				PRODUCT_NAME = "$(TARGET_NAME) Dev";
+				PRODUCT_NAME = "$(APP_NAME) Dev";
 				SWIFT_OBJC_BRIDGING_HEADER = "Runner/Runner-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -879,6 +879,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 9740EEB21CF90195004384FC /* Debug.xcconfig */;
 			buildSettings = {
+				APP_NAME = "My App";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = "$(FLUTTER_BUILD_NUMBER)";
@@ -889,9 +890,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				NEW_SETTING = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.flutterStarterBoilerplate.stg;
-				PRODUCT_NAME = "$(TARGET_NAME) Stg";
+				PRODUCT_NAME = "$(APP_NAME) Stg";
 				SWIFT_OBJC_BRIDGING_HEADER = "Runner/Runner-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -971,6 +971,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 7AFA3C8E1D35360C0083082E /* Release.xcconfig */;
 			buildSettings = {
+				APP_NAME = "My App";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = "$(FLUTTER_BUILD_NUMBER)";
@@ -981,9 +982,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				NEW_SETTING = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.flutterStarterBoilerplate.dev;
-				PRODUCT_NAME = "$(TARGET_NAME) Dev";
+				PRODUCT_NAME = "$(APP_NAME) Dev";
 				SWIFT_OBJC_BRIDGING_HEADER = "Runner/Runner-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -1060,6 +1060,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 7AFA3C8E1D35360C0083082E /* Release.xcconfig */;
 			buildSettings = {
+				APP_NAME = "My App";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = "$(FLUTTER_BUILD_NUMBER)";
@@ -1070,9 +1071,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				NEW_SETTING = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.flutterStarterBoilerplate.stg;
-				PRODUCT_NAME = "$(TARGET_NAME) Stg";
+				PRODUCT_NAME = "$(APP_NAME) Stg";
 				SWIFT_OBJC_BRIDGING_HEADER = "Runner/Runner-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -1151,6 +1151,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 7AFA3C8E1D35360C0083082E /* Release.xcconfig */;
 			buildSettings = {
+				APP_NAME = "My App";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = "$(FLUTTER_BUILD_NUMBER)";
@@ -1161,9 +1162,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				NEW_SETTING = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.flutterStarterBoilerplate.dev;
-				PRODUCT_NAME = "$(TARGET_NAME) Dev";
+				PRODUCT_NAME = "$(APP_NAME) Dev";
 				SWIFT_OBJC_BRIDGING_HEADER = "Runner/Runner-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -1242,6 +1242,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 7AFA3C8E1D35360C0083082E /* Release.xcconfig */;
 			buildSettings = {
+				APP_NAME = "My App";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = "$(FLUTTER_BUILD_NUMBER)";
@@ -1252,9 +1253,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				NEW_SETTING = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.flutterStarterBoilerplate.stg;
-				PRODUCT_NAME = "$(TARGET_NAME) Stg";
+				PRODUCT_NAME = "$(APP_NAME) Stg";
 				SWIFT_OBJC_BRIDGING_HEADER = "Runner/Runner-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -1336,6 +1336,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 9740EEB21CF90195004384FC /* Debug.xcconfig */;
 			buildSettings = {
+				APP_NAME = "My App";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = "$(FLUTTER_BUILD_NUMBER)";
@@ -1346,9 +1347,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				NEW_SETTING = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.flutterStarterBoilerplate;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "$(APP_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Runner/Runner-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -1430,6 +1430,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 7AFA3C8E1D35360C0083082E /* Release.xcconfig */;
 			buildSettings = {
+				APP_NAME = "My App";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = "$(FLUTTER_BUILD_NUMBER)";
@@ -1440,9 +1441,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				NEW_SETTING = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.flutterStarterBoilerplate;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "$(APP_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Runner/Runner-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -1519,6 +1519,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 7AFA3C8E1D35360C0083082E /* Release.xcconfig */;
 			buildSettings = {
+				APP_NAME = "My App";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = "$(FLUTTER_BUILD_NUMBER)";
@@ -1529,9 +1530,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				NEW_SETTING = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.flutterStarterBoilerplate;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "$(APP_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Runner/Runner-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";

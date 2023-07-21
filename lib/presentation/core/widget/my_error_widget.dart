@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_starter_boilerplate/common.dart';
-import 'package:flutter_starter_boilerplate/core/extention/context_extention.dart';
 
+import '../../../core/extention/context_extention.dart';
 import '../../../domain/core/unions/failure.dart';
 import '../style/sizes.dart';
 

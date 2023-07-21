@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_starter_boilerplate/presentation/core/style/app_theme.dart';
 
 import 'common.dart';
 import 'di/injection_container.dart';
 import 'presentation/bloc/localization/localization_bloc.dart';
+import 'presentation/core/style/app_theme.dart';
 import 'presentation/route/routers.dart';
 
 class MainApp extends StatelessWidget {

@@ -13,6 +13,7 @@ class GetLoginSessionUC extends BaseUCFutureWithoutParam<bool> {
   @override
   Future<Either<Failure, bool>> execute() async {
     await Future.delayed(const Duration(seconds: 2));
-    return right(false);
+    final accessToken = _myRepository.getAccessToken().getOrElse((l) => '');
+    return right(accessToken.isNotEmpty);
   }
 }

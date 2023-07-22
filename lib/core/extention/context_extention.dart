@@ -8,7 +8,10 @@ extension ContextExtention on BuildContext {
   ColorScheme get colorScheme => Theme.of(this).colorScheme;
 
   void showSnackBar({required String message}) {
-    final snackBar = SnackBar(content: Text(message));
+    final snackBar = SnackBar(
+      content: Text(message),
+      behavior: SnackBarBehavior.floating,
+    );
     ScaffoldMessenger.of(this)
       ..hideCurrentSnackBar()
       ..showSnackBar(snackBar);

@@ -1,6 +1,13 @@
 {
   "appName": "My App",
+  "comingSoon": "Segera Hadir",
+  "home": "Beranda",
+  "login": "Masuk",
+  "logout": "Keluar",
   "next": "Selanjutnya",
+  "password": "Kata Sandi",
   "previous": "Sebelumnya",
-  "retry": "Ulangi"
+  "register": "Daftar",
+  "retry": "Ulangi",
+  "username": "Username"
 }

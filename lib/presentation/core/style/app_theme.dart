@@ -6,11 +6,22 @@ class AppTheme {
   const AppTheme._();
 
   static ThemeData getThemeData({required ThemeType themeType}) {
+    late ThemeData themeData;
     switch (themeType) {
       case ThemeType.light:
-        return ThemeData.light(useMaterial3: true);
+        themeData = ThemeData.light(useMaterial3: true);
+        return themeData.copyWith(
+          appBarTheme: themeData.appBarTheme.copyWith(
+            centerTitle: true,
+          ),
+        );
       case ThemeType.dark:
-        return ThemeData.dark(useMaterial3: true);
+        themeData = ThemeData.dark(useMaterial3: true);
+        return themeData.copyWith(
+          appBarTheme: themeData.appBarTheme.copyWith(
+            centerTitle: true,
+          ),
+        );
     }
   }
 }

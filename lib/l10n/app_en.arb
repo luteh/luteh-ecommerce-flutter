@@ -1,6 +1,13 @@
 {
   "appName": "My App",
+  "comingSoon": "Coming Soon",
+  "home": "Home",
+  "login": "Login",
+  "logout": "Logout",
   "next": "Next",
+  "password": "Password",
   "previous": "Previous",
-  "retry": "Retry"
+  "register": "Register",
+  "retry": "Retry",
+  "username": "Username"
 }

@@ -36,7 +36,8 @@ class Failure with _$Failure {
 
   const factory Failure.unableToProcess() = UnableToProcess;
 
-  const factory Failure.defaultError(String error) = DefaultError;
+  const factory Failure.defaultError({@Default('') String? error}) =
+      DefaultError;
 
   const factory Failure.unexpectedError() = UnexpectedError;
 
@@ -95,8 +96,8 @@ class Failure with _$Failure {
       errorMessage = 'Send timeout in connection with API server';
     }, unableToProcess: () {
       errorMessage = 'Unable to process the data';
-    }, defaultError: (String error) {
-      errorMessage = error;
+    }, defaultError: (String? error) {
+      errorMessage = error ?? 'Something went wrong, please try again later';
     }, formatException: () {
       errorMessage = 'Unexpected error occurred';
     }, notAcceptable: () {

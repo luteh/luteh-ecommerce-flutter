@@ -2,6 +2,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../di/injection_container.dart';
+import '../bloc/login/login_bloc.dart';
 import '../bloc/onboarding/onboarding_bloc.dart';
 import '../bloc/splash/splash_bloc.dart';
 import '../page/home/home_page.dart';
@@ -30,7 +31,10 @@ final routers = GoRouter(
     ),
     GoRoute(
       path: RouteName.login,
-      builder: (context, state) => const LoginPage(),
+      builder: (context, state) => BlocProvider(
+        create: (context) => getIt.get<LoginBloc>(),
+        child: const LoginPage(),
+      ),
     ),
     GoRoute(
       path: RouteName.home,

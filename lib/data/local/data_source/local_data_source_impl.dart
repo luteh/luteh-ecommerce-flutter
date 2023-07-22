@@ -17,4 +17,14 @@ class LocalDataSourceImpl implements LocalDataSource {
   Future<void> saveLanguageCode(String languageCode) async {
     await _prefsManager.saveLanguageCode(languageCode);
   }
+
+  @override
+  String getAccessToken() {
+    return _prefsManager.getAccessToken();
+  }
+
+  @override
+  Future<void> saveAccessToken(String accessToken) async {
+    await _prefsManager.saveAccessToken(accessToken);
+  }
 }

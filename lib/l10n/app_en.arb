@@ -1,4 +1,6 @@
 {
   "appName": "My App",
+  "next": "Next",
+  "previous": "Previous",
   "retry": "Retry"
 }

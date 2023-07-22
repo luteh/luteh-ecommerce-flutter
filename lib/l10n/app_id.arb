@@ -1,4 +1,6 @@
 {
   "appName": "My App",
+  "next": "Selanjutnya",
+  "previous": "Sebelumnya",
   "retry": "Ulangi"
 }

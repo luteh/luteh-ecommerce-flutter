@@ -13,6 +13,6 @@ class GetLoginSessionUC extends BaseUCFutureWithoutParam<bool> {
   @override
   Future<Either<Failure, bool>> execute() async {
     await Future.delayed(const Duration(seconds: 2));
-    return right(true);
+    return right(false);
   }
 }

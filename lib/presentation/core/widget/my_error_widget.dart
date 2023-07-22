@@ -1,33 +1,42 @@
 import 'package:flutter/material.dart';
 
 import '../../../core/extention/context_extention.dart';
-import '../../../domain/core/unions/failure.dart';
 import '../style/sizes.dart';
 
 class MyErrorWidget extends StatelessWidget {
-  final Failure failure;
-  final Function() onPressRetry;
+  final String text;
+  final Function() onTapRetry;
+  final CrossAxisAlignment crossAxisAlignment;
+  final MainAxisAlignment mainAxisAlignment;
   const MyErrorWidget({
-    Key? key,
-    required this.failure,
-    required this.onPressRetry,
-  }) : super(key: key);
+    super.key,
+    required this.text,
+    required this.onTapRetry,
+    this.crossAxisAlignment = CrossAxisAlignment.center,
+    this.mainAxisAlignment = MainAxisAlignment.start,
+  });
 
   @override
   Widget build(BuildContext context) {
-    final message = Failure.getErrorMessage(failure);
     return Center(
       child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: crossAxisAlignment,
+        mainAxisAlignment: mainAxisAlignment,
         children: [
-          Text(message),
-          SizedBox(
-            height: Sizes.height16,
+          Text(
+            text,
+            style: context.textTheme.bodyMedium,
           ),
+          SizedBox(height: Sizes.height8),
           ElevatedButton(
             onPressed: () {
-              onPressRetry.call();
+              onTapRetry();
             },
+            style: ElevatedButton.styleFrom(
+              padding: EdgeInsets.symmetric(
+                vertical: Sizes.height16,
+              ),
+            ),
             child: Text(context.localization.retry),
           ),
         ],

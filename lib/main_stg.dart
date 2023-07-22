@@ -5,6 +5,6 @@ import 'main_app.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await configureDependencies();
+  await configureDependencies(environment: stg);
   runApp(const MainApp());
 }

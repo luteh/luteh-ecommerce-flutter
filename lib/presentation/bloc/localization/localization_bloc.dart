@@ -19,7 +19,7 @@ class LocalizationBloc extends Bloc<LocalizationEvent, LocalizationState> {
   LocalizationBloc(this._getLanguageCodeUC, this._saveLanguageCodeUC)
       : super(LocalizationState.initial()) {
     on<_LocaleChanged>(_onLocaleChanged);
-    on<_Init>(_onInit);
+    on<_Started>(_onStarted);
   }
 
   void _onLocaleChanged(
@@ -37,7 +37,7 @@ class LocalizationBloc extends Bloc<LocalizationEvent, LocalizationState> {
     );
   }
 
-  void _onInit(_Init event, Emitter<LocalizationState> emit) {
+  void _onStarted(_Started event, Emitter<LocalizationState> emit) {
     _getLanguageCode(emit);
   }
 

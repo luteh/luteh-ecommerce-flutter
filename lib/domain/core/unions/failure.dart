@@ -85,7 +85,7 @@ class Failure with _$Failure {
     }, unauthorisedRequest: () {
       errorMessage = 'Unauthorised request';
     }, unexpectedError: () {
-      errorMessage = 'Unexpected error occurred';
+      errorMessage = 'Something went wrong, please try again later';
     }, requestTimeout: () {
       errorMessage = 'Connection request timeout';
     }, noInternetConnection: () {

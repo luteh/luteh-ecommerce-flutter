@@ -1,20 +1,21 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-import 'login/login_response.dart';
-
 part 'base_response.freezed.dart';
 part 'base_response.g.dart';
 
 @freezed
-class BaseResponse with _$BaseResponse {
+@JsonSerializable(genericArgumentFactories: true)
+class BaseResponse<T> with _$BaseResponse<T> {
   const factory BaseResponse({
     bool? success,
     String? message,
-    LoginResponse? data,
     String? token,
     String? refresh,
+    T? data,
   }) = _BaseResponse;
 
-  factory BaseResponse.fromJson(Map<String, dynamic> json) =>
-      _$BaseResponseFromJson(json);
+  factory BaseResponse.fromJson(
+      Map<String, dynamic> json, T Function(Object? json) fromJsonT) {
+    return _$BaseResponseFromJson<T>(json, fromJsonT);
+  }
 }

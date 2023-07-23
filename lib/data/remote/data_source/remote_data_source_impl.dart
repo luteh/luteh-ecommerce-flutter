@@ -5,6 +5,7 @@ import 'package:injectable/injectable.dart';
 import '../api_service/my_api_service.dart';
 import '../model/request/login/login_request.dart';
 import '../model/response/base_response.dart';
+import '../model/response/login/login_response.dart';
 import 'remote_data_source.dart';
 
 @LazySingleton(as: RemoteDataSource)
@@ -13,9 +14,12 @@ class RemoteDataSourceImpl implements RemoteDataSource {
 
   RemoteDataSourceImpl(this._myApiService);
   @override
-  Future<BaseResponse> login(LoginRequest request) async {
+  Future<BaseResponse<LoginResponse>> login(LoginRequest request) async {
     final response = await _myApiService.login(request);
 
-    return BaseResponse.fromJson(jsonDecode(response.body));
+    return BaseResponse.fromJson(
+      jsonDecode(response.body),
+      (json) => LoginResponse.fromJson(json as dynamic),
+    );
   }
 }

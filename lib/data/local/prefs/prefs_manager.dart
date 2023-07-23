@@ -22,6 +22,10 @@ class PrefsManager {
     await _preferences.setString(keyAccessToken, accessToken);
   }
 
+  Future<void> removeAccessToken() async {
+    await _preferences.remove(keyAccessToken);
+  }
+
   String getAccessToken() {
     return _preferences.getString(keyAccessToken) ?? '';
   }

@@ -27,4 +27,9 @@ class LocalDataSourceImpl implements LocalDataSource {
   Future<void> saveAccessToken(String accessToken) async {
     await _prefsManager.saveAccessToken(accessToken);
   }
+
+  @override
+  Future<void> removeAccessToken() async {
+    await _prefsManager.removeAccessToken();
+  }
 }

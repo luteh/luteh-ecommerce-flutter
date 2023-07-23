@@ -41,4 +41,10 @@ class MyRepositoryImpl implements MyRepository {
   Either<Failure, String> getAccessToken() {
     return right(_localDataSource.getAccessToken());
   }
+
+  @override
+  Future<Either<Failure, void>> logout() async {
+    await _localDataSource.removeAccessToken();
+    return right(null);
+  }
 }

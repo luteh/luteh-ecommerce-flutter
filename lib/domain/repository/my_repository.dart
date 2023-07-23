@@ -14,4 +14,6 @@ abstract class MyRepository {
   });
 
   Either<Failure, String> getAccessToken();
+
+  Future<Either<Failure, void>> logout();
 }

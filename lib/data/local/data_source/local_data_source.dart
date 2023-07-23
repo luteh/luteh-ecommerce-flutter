@@ -4,4 +4,5 @@ abstract class LocalDataSource {
   String getLanguageCode();
   Future<void> saveAccessToken(String accessToken);
   String getAccessToken();
+  Future<void> removeAccessToken();
 }

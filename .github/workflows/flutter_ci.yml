@@ -37,7 +37,7 @@ jobs:
         run: flutter analyze .
 
       - name: Start staging APK build
-        run: flutter build apk --release --flavor stg --obfuscate --split-debug-info=debug_files lib/main-stg.dart
+        run: flutter build apk --release --flavor stg --obfuscate --split-debug-info=debug_files lib/main_stg.dart
 
       - name: Upload staging APK
         uses: actions/upload-artifact@v2

@@ -1,0 +1,46 @@
+name: Staging APK build
+
+on:
+  push:
+    branches: ['master']
+  pull_request:
+    branches: ['master']
+
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: actions/setup-java@v3
+        with:
+          distribution: 'zulu'
+          java-version: '12.x'
+          cache: 'gradle'
+
+      - uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.10.6'
+          channel: 'stable'
+          cache: true
+
+      - name: Get dependencies
+        run: flutter pub get
+
+      - name: Start build runner build
+        run: flutter pub run build_runner build
+
+      - name: Start analyze dart codes
+        run: flutter analyze .
+
+      - name: Start staging APK build
+        run: flutter build apk --release --flavor stg --obfuscate --split-debug-info=debug_files lib/main-stg.dart
+
+      - name: Upload staging APK
+        uses: actions/upload-artifact@v2
+        with:
+          name: staging-apk-release
+          path: build/app/outputs/flutter-apk/app-stg-release.apk

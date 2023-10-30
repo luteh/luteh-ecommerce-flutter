@@ -1,4 +1,4 @@
-import 'package:http/http.dart' as http;
+import 'package:dio/dio.dart';
 import 'package:injectable/injectable.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -39,5 +39,9 @@ abstract class RegisterModule {
   Future<SharedPreferences> get prefs => SharedPreferences.getInstance();
 
   @lazySingleton
-  http.Client get httpClient => http.Client();
+  Dio getDio(@Named(DependencyName.baseUrl) baseUrl) => Dio(
+        BaseOptions(
+          baseUrl: baseUrl,
+        ),
+      );
 }

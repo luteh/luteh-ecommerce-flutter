@@ -1,5 +1,3 @@
-import 'dart:convert';
-
 import 'package:injectable/injectable.dart';
 
 import '../api_service/my_api_service.dart';
@@ -18,7 +16,7 @@ class RemoteDataSourceImpl implements RemoteDataSource {
     final response = await _myApiService.login(request);
 
     return BaseResponse.fromJson(
-      jsonDecode(response.body),
+      response.data,
       (json) => LoginResponse.fromJson(json as dynamic),
     );
   }

@@ -8,4 +8,9 @@ extension StringExtention on String {
     var digest = sha256.convert(bytes); // Calculate SHA-256 hash
     return digest.toString(); // Convert the hash to a string representation
   }
+
+  String capitalizeFirstLetter() {
+    if (isEmpty) return this; // Handle empty string case.
+    return this[0].toUpperCase() + substring(1);
+  }
 }

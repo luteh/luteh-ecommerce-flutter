@@ -39,7 +39,7 @@ abstract class RegisterModule {
   Future<SharedPreferences> get prefs => SharedPreferences.getInstance();
 
   @lazySingleton
-  Dio getDio(@Named(DependencyName.baseUrl) baseUrl) => Dio(
+  Dio getDio(@Named(DependencyName.baseUrl) String baseUrl) => Dio(
         BaseOptions(
           baseUrl: baseUrl,
         ),

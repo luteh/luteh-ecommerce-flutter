@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../core/style/size_wrapper_extension.dart';
 import '../../core/style/sizes.dart';
 import '../../core/widget/my_scaffold.dart';
 import 'widget/login_footer.dart';
@@ -26,7 +27,7 @@ class LoginPage extends StatelessWidget {
                       const Expanded(
                         child: LoginFormSection(),
                       ),
-                      SizedBox(height: Sizes.height32),
+                      SizedBox(height: 32.h),
                       const LoginFooter(),
                     ],
                   ),

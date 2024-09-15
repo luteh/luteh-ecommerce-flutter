@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 
+import 'route_extension.dart';
 import 'route_name.dart';
 
 class RouteUtils {

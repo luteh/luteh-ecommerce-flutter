@@ -147,6 +147,7 @@ app.*.map.json
 *.freezed.dart
 *.config.dart
 *.graphql.dart
+*.mocks.dart
 
 # Exceptions to above rules.
 !**/ios/**/default.mode1v3

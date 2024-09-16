@@ -6,14 +6,15 @@ import 'auth_remote_data_source.dart';
 
 @LazySingleton(as: AuthRemoteDataSource)
 class AuthRemoteDataSourceImpl extends AuthRemoteDataSource {
-  final GraphQLClient client;
+  final GraphQLClient graphQlClient;
 
-  AuthRemoteDataSourceImpl(this.client);
+  AuthRemoteDataSourceImpl(this.graphQlClient);
 
   @override
   Future<Mutation$CreateUser$createUser> registerUser(
       Variables$Mutation$CreateUser request) async {
-    final result = await client.mutate$CreateUser(Options$Mutation$CreateUser(
+    final result =
+        await graphQlClient.mutate$CreateUser(Options$Mutation$CreateUser(
       variables: request,
     ));
 
@@ -30,10 +31,16 @@ class AuthRemoteDataSourceImpl extends AuthRemoteDataSource {
 
   @override
   Future<List<Query$GetRoles$getRoles>> fetchUserRoles() async {
-    final result = await client.query$GetRoles(null);
-    if (result.hasException || result.parsedData?.getRoles == null) {
+    final result = await graphQlClient.query$GetRoles(null);
+    if (result.hasException) {
       throw Exception(result.exception.toString());
     }
+
+    if (result.parsedData?.getRoles == null ||
+        result.parsedData!.getRoles!.isEmpty) {
+      throw Exception('Failed to get user roles');
+    }
+
     return result.parsedData!.getRoles!.map((e) => e!).toList();
   }
 }

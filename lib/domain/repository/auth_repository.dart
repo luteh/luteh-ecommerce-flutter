@@ -7,4 +7,8 @@ import '../model/user_role.dart';
 abstract class AuthRepository {
   Future<Either<Failure, List<UserRole>>> fetchUserRoles();
   Future<Either<Failure, void>> registerUser(RegisterUser user);
+  Future<Either<Failure, void>> login({
+    required String email,
+    required String password,
+  });
 }

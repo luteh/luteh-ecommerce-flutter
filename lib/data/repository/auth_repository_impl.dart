@@ -43,4 +43,16 @@ class AuthRepositoryImpl implements AuthRepository {
       return left(Failure.defaultError(error: e.toString()));
     }
   }
+
+  @override
+  Future<Either<Failure, void>> login(
+      {required String email, required String password}) async {
+    try {
+      await _authRemoteDataSource
+          .login(Variables$Mutation$Login(password: password, email: email));
+      return right(null);
+    } on Exception catch (e) {
+      return left(Failure.defaultError(error: e.toString()));
+    }
+  }
 }

@@ -3,7 +3,7 @@ part of 'login_bloc.dart';
 @freezed
 class LoginState with _$LoginState {
   const factory LoginState({
-    required ResultState<LoginEntity> doLoginState,
+    required ResultState<void> doLoginState,
     required String username,
     required String password,
     required bool isFormValidated,

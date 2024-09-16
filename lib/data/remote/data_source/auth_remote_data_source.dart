@@ -4,4 +4,5 @@ abstract class AuthRemoteDataSource {
   Future<Mutation$CreateUser$createUser> registerUser(
       Variables$Mutation$CreateUser request);
   Future<List<Query$GetRoles$getRoles>> fetchUserRoles();
+  Future<String> login(Variables$Mutation$Login request);
 }

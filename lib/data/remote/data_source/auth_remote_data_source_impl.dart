@@ -43,4 +43,20 @@ class AuthRemoteDataSourceImpl extends AuthRemoteDataSource {
 
     return result.parsedData!.getRoles!.map((e) => e!).toList();
   }
+
+  @override
+  Future<String> login(Variables$Mutation$Login request) async {
+    final result = await graphQlClient
+        .mutate$Login(Options$Mutation$Login(variables: request));
+
+    if (result.hasException) {
+      throw Exception(result.exception.toString());
+    }
+
+    if (result.parsedData?.login == null) {
+      throw Exception('Failed to login');
+    }
+
+    return result.parsedData!.login!;
+  }
 }

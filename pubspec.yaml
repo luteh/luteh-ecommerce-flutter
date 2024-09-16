@@ -25,6 +25,7 @@ dependencies:
   flutter_screenutil: ^5.9.3
   cached_network_image: ^3.4.1
   graphql_flutter: ^5.1.2
+  rxdart: ^0.28.0
 
 dev_dependencies:
   flutter_test:

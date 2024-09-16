@@ -6,6 +6,7 @@ import 'package:injectable/injectable.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import '../core/constant/dependency_name.dart';
+import '../data/remote/core/graphql_logging_link.dart';
 import 'injection_container.dart';
 
 @module
@@ -56,10 +57,15 @@ abstract class RegisterModule {
 
   @lazySingleton
   GraphQLClient getGraphQLClient(
-          @Named(DependencyName.baseUrl) String baseUrl) =>
-      GraphQLClient(
-        link: HttpLink(baseUrl),
-        // The default store is the InMemoryStore, which does NOT persist to disk
-        cache: GraphQLCache(store: null),
-      );
+      @Named(DependencyName.baseUrl) String baseUrl) {
+    final httpLink = HttpLink(baseUrl);
+    final loggingLink = GraphqlLoggingLink();
+
+    final link = loggingLink.concat(httpLink);
+    return GraphQLClient(
+      link: link,
+      // The default store is the InMemoryStore, which does NOT persist to disk
+      cache: GraphQLCache(store: null),
+    );
+  }
 }

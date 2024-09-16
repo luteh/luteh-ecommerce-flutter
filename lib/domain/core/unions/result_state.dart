@@ -22,4 +22,10 @@ class ResultState<T> with _$ResultState<T> {
       return null;
     }
   }
+
+  bool get isLoading => this is Loading;
+
+  bool get isFailure => this is Error;
+
+  bool get isSuccess => this is Success;
 }

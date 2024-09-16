@@ -6,6 +6,8 @@ import '../../../../domain/core/unions/failure.dart';
 import '../../../bloc/login/login_bloc.dart';
 import '../../../core/style/sizes.dart';
 import '../../../core/widget/rounded_elevated_button.dart';
+import '../../../route/route_extension.dart';
+import '../../../route/route_name.dart';
 import '../../../route/route_utils.dart';
 
 class LoginFooter extends StatelessWidget {
@@ -51,9 +53,7 @@ class LoginFooter extends StatelessWidget {
                 SizedBox(height: Sizes.height16),
                 RoundedElevatedButton(
                   onPressed: () {
-                    context.showSnackBar(
-                      message: context.localization.comingSoon,
-                    );
+                    context.push(RouteName.registerUser);
                   },
                   text: context.localization.register,
                 ),

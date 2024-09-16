@@ -24,6 +24,7 @@ dependencies:
   infinite_scroll_pagination: ^4.0.0
   flutter_screenutil: ^5.9.3
   cached_network_image: ^3.4.1
+  graphql_flutter: ^5.1.2
 
 dev_dependencies:
   flutter_test:
@@ -35,6 +36,7 @@ dev_dependencies:
   injectable_generator: ^2.6.2
   mockito: ^5.4.4
   bloc_test: ^9.1.7
+  graphql_codegen: ^1.0.1
 
 flutter:
   uses-material-design: true

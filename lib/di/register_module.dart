@@ -1,4 +1,7 @@
+import 'dart:io';
+
 import 'package:dio/dio.dart';
+import 'package:graphql_flutter/graphql_flutter.dart';
 import 'package:injectable/injectable.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -10,17 +13,23 @@ abstract class RegisterModule {
   @Named(DependencyName.baseUrl)
   @lazySingleton
   @prod
-  String get baseUrlProd => 'https://bowindo.servehttp.com';
+  String get baseUrlProd => Platform.isAndroid
+      ? 'http://10.0.2.2:4000/graphql'
+      : 'http://localhost:4000/graphql';
 
   @Named(DependencyName.baseUrl)
   @lazySingleton
   @dev
-  String get baseUrlDev => 'https://bowindo.servehttp.com/dev';
+  String get baseUrlDev => Platform.isAndroid
+      ? 'http://10.0.2.2:4000/graphql'
+      : 'http://localhost:4000/graphql';
 
   @Named(DependencyName.baseUrl)
   @lazySingleton
   @stg
-  String get baseUrlStg => 'https://bowindo.servehttp.com/stg';
+  String get baseUrlStg => Platform.isAndroid
+      ? 'http://10.0.2.2:4000/graphql'
+      : 'http://localhost:4000/graphql';
 
   @lazySingleton
   @dev
@@ -43,5 +52,14 @@ abstract class RegisterModule {
         BaseOptions(
           baseUrl: baseUrl,
         ),
+      );
+
+  @lazySingleton
+  GraphQLClient getGraphQLClient(
+          @Named(DependencyName.baseUrl) String baseUrl) =>
+      GraphQLClient(
+        link: HttpLink(baseUrl),
+        // The default store is the InMemoryStore, which does NOT persist to disk
+        cache: GraphQLCache(store: null),
       );
 }

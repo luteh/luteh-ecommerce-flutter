@@ -6,4 +6,5 @@ class RouteName {
   static const home = '/home';
   static const login = '/login';
   static const profile = '/profile';
+  static const registerUser = '/register-user';
 }

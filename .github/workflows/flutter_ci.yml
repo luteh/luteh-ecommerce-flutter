@@ -30,22 +30,16 @@ jobs:
           channel: 'stable'
           cache: true
 
+      - name: Get dependencies
+        run: flutter pub get
+  
+      - name: Start build runner build
+        run: flutter pub run build_runner build
+
   analyze:
     runs-on: ubuntu-latest
     needs: setup
     steps:
-      - uses: actions/checkout@v3
-
-      - name: Setup Flutter
-        uses: subosito/flutter-action@v2
-        with:
-          flutter-version: '3.24.2'
-          channel: 'stable'
-          cache: true
-
-      - name: Get dependencies
-        run: flutter pub get
-
       - name: Start Dart code analysis
         run: flutter analyze .
 
@@ -53,18 +47,6 @@ jobs:
     runs-on: ubuntu-latest
     needs: setup
     steps:
-      - uses: actions/checkout@v3
-
-      - name: Setup Flutter
-        uses: subosito/flutter-action@v2
-        with:
-          flutter-version: '3.24.2'
-          channel: 'stable'
-          cache: true
-
-      - name: Get dependencies
-        run: flutter pub get
-
       - name: Run unit tests and collect coverage
         run: flutter test --coverage
 
@@ -77,21 +59,6 @@ jobs:
     runs-on: ubuntu-latest
     needs: [analyze, unit_test]
     steps:
-      - uses: actions/checkout@v3
-
-      - name: Setup Flutter
-        uses: subosito/flutter-action@v2
-        with:
-          flutter-version: '3.24.2'
-          channel: 'stable'
-          cache: true
-
-      - name: Get dependencies
-        run: flutter pub get
-
-      - name: Start build runner build
-        run: flutter pub run build_runner build
-
       - name: Start staging APK build
         run: flutter build apk --release --flavor stg --obfuscate --split-debug-info=debug_files lib/main_stg.dart
 

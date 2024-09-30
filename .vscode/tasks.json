@@ -123,5 +123,16 @@
 			"problemMatcher": [],
 			"label": "flutter build appbundle --release --flavor prod --obfuscate --split-debug-info=debug_files lib/main_prod.dart",
 		},
+		{
+            "label": "Generate Unit Test Coverage Report",
+            "type": "shell",
+            "command": "./generate_coverage.sh",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": [],
+            "detail": "Generate Flutter unit test coverage report with lcov."
+        }
 	]
 }

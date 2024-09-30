@@ -50,11 +50,11 @@ jobs:
             ~/.pub-cache
             build
             .dart_tool/build/
-            *.g.dart
-            *.freezed.dart
-            *.config.dart
-            *.graphql.dart
-            *.mocks.dart
+            lib/**/*.g.dart
+            lib/**/*.freezed.dart
+            lib/**/*.config.dart
+            lib/**/*.graphql.dart
+            test/**/*.mocks.dart
           key: flutter-cache-${{ runner.os }}-${{ hashFiles('**/pubspec.yaml') }}
           restore-keys: |
             flutter-cache-${{ runner.os }}-
@@ -79,11 +79,11 @@ jobs:
             ~/.pub-cache
             build
             .dart_tool/build/
-            *.g.dart
-            *.freezed.dart
-            *.config.dart
-            *.graphql.dart
-            *.mocks.dart
+            lib/**/*.g.dart
+            lib/**/*.freezed.dart
+            lib/**/*.config.dart
+            lib/**/*.graphql.dart
+            test/**/*.mocks.dart
           key: flutter-cache-${{ runner.os }}-${{ hashFiles('**/pubspec.yaml') }}
           restore-keys: |
             flutter-cache-${{ runner.os }}-
@@ -111,11 +111,11 @@ jobs:
             ~/.pub-cache
             build
             .dart_tool/build/
-            *.g.dart
-            *.freezed.dart
-            *.config.dart
-            *.graphql.dart
-            *.mocks.dart
+            lib/**/*.g.dart
+            lib/**/*.freezed.dart
+            lib/**/*.config.dart
+            lib/**/*.graphql.dart
+            test/**/*.mocks.dart
           key: flutter-cache-${{ runner.os }}-${{ hashFiles('**/pubspec.yaml') }}
           restore-keys: |
             flutter-cache-${{ runner.os }}-
@@ -146,11 +146,11 @@ jobs:
             ~/.pub-cache
             build
             .dart_tool/build/
-            *.g.dart
-            *.freezed.dart
-            *.config.dart
-            *.graphql.dart
-            *.mocks.dart
+            lib/**/*.g.dart
+            lib/**/*.freezed.dart
+            lib/**/*.config.dart
+            lib/**/*.graphql.dart
+            test/**/*.mocks.dart
           key: flutter-cache-${{ runner.os }}-${{ hashFiles('**/pubspec.yaml') }}
           restore-keys: |
             flutter-cache-${{ runner.os }}-

@@ -12,6 +12,8 @@ import '../page/home/home_page.dart';
 import '../page/home_bottom_navbar/home_bottom_navbar_scaffold.dart';
 import '../page/login/login_page.dart';
 import '../page/onboarding/onboarding_page.dart';
+import '../page/product_detail/product_detail_extra.dart';
+import '../page/product_detail/product_detail_screen.dart';
 import '../page/profile/profile_page.dart';
 import '../page/register_user/register_user_screen.dart';
 import '../page/splash/splash_page.dart';
@@ -53,6 +55,13 @@ final routers = GoRouter(
       parentNavigatorKey: _rootNavigatorKey,
       path: RouteName.registerUser,
       builder: (context, state) => const RegisterUserScreen(),
+    ),
+    GoRoute(
+      parentNavigatorKey: _rootNavigatorKey,
+      path: RouteName.productDetail,
+      builder: (context, state) => ProductDetailScreen(
+        extra: state.extra as ProductDetailExtra,
+      ),
     ),
     ShellRoute(
       navigatorKey: _shellNavigatorKey,

@@ -33,4 +33,24 @@ class ProductRemoteDataSource {
         .map((e) => e!)
         .toList(growable: false);
   }
+
+  Future<Query$GetProduct$getProduct> fetchProductDetail({
+    required String id,
+  }) async {
+    final result =
+        await graphQlClient.query$GetProduct(Options$Query$GetProduct(
+            variables: Variables$Query$GetProduct(
+      id: id,
+    )));
+
+    if (result.hasException) {
+      throw Exception(result.exception.toString());
+    }
+
+    if (result.parsedData?.getProduct == null) {
+      throw Exception('Failed to get products');
+    }
+
+    return result.parsedData!.getProduct!;
+  }
 }

@@ -4,11 +4,15 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../core/extention/context_extention.dart';
 import '../../../di/injection_container.dart';
+import '../../../domain/core/unions/failure.dart';
 import '../../bloc/home/home_bloc.dart';
 import '../../core/style/size_wrapper_extension.dart';
 import '../../core/widget/my_error_widget.dart';
 import '../../core/widget/my_scaffold.dart';
 import '../../core/widget/rounded_text_field.dart';
+import '../../route/route_extension.dart';
+import '../../route/route_name.dart';
+import '../product_detail/product_detail_extra.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -89,7 +93,7 @@ class _HomePageState extends State<_HomePage> {
                   orElse: () =>
                       const Center(child: CircularProgressIndicator()),
                   failure: (failure) => MyErrorWidget(
-                    text: 'Retry',
+                    text: Failure.getErrorMessage(failure),
                     onTapRetry: () => context
                         .read<HomeBloc>()
                         .add(const HomeEvent.retryFetchProductsButtonClicked()),
@@ -134,6 +138,14 @@ class _HomePageState extends State<_HomePage> {
                                 ),
                               ),
                             ),
+                            onTap: () {
+                              context.push(
+                                RouteName.productDetail,
+                                extra: ProductDetailExtra(
+                                  productId: data[index].id,
+                                ),
+                              );
+                            },
                           );
                         },
                       ),
